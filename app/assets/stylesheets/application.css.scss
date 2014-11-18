@@ -1,0 +1,347 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_tree ../../../vendor/assets/stylesheets/bootstrap
+ *= require_tree ../../../vendor/assets/stylesheets/font-awesome
+ *= require_tree ../../../vendor/assets/stylesheets/animation
+ */
+
+body, html{
+}
+header{
+	height:800px;
+}
+
+
+.about h1{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+}
+#first_row{
+	padding-top:50px;
+}
+.about .row{
+	padding-bottom:30px;
+	padding-top:30px;
+}
+#errors{
+	color:red;
+}
+.about p{
+	font-family: 'Myriad Pro Regular';
+}
+#first-arrow{
+	padding-top:50px;
+	transform: rotate(10deg) ;
+	stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	-webkit-animation: test 5s linear;
+  	animation: test 5s linear;
+  	height:200px;
+}
+#second-arrow{
+	height:200px;
+	transform: rotate(180deg) ;
+
+	stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	-webkit-animation: test 5s linear;
+  	animation: test 5s linear;
+}
+
+@-webkit-keyframes test {
+	to {
+	  stroke-dashoffset: 0;
+
+	}
+}
+@keyframes test {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.start_hidden{
+	display:none;
+}
+#download_button{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:25px;
+	line-height:2.5em;
+}
+#submit_new{
+	font-size:25px;
+	line-height:2em;
+}
+.newcard h1{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+	padding-top:30px;
+
+}
+header .landing_main{
+	padding:0px;
+	padding-top:50px;
+	margin:auto 0px;
+	position:fixed;
+	opacity: 1;
+}
+#landing_row{
+	padding-top:250px;
+}
+
+#ks_button_link{
+	width:80%;
+	padding:0px;
+	border:none;
+	background:transparent;
+	margin: 0 auto;
+}
+#ks_button{
+	width:100%;
+}
+#ks_button:hover{
+	opacity: 0.8;
+	margin:0px;
+}
+
+#tagline{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+	color:white;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+}
+.cards{
+	color:white;
+	text-align: center;
+	font-family: 'Myriad Pro Bold Condensed';
+	padding-top:50px;
+	background-color: #143C78;
+	padding-bottom:100px;
+
+}
+.newcard{
+	background-color:#eee;
+	text-align: center;
+	padding-bottom:50px;
+}
+section{
+	position:relative;
+	z-index:1;
+	background-color:white;
+	padding-bottom:20px;
+	font-family: 'Myriad Pro Regular'
+}
+.cards h1{
+	padding-bottom:30px;
+	font-size:4vw;
+}
+.card_display{
+	background-color:black;
+	height:30vw;
+	border-radius:15px;
+	cursor:pointer;
+	text-align: center;
+ 	overflow-y:hidden;
+}
+#vs{
+	padding-top:20%;
+	font-size:10vw;
+}
+.form{
+	padding-top: 50px;
+	color:black;
+	font-size:30px;
+	font-family: 'Myriad Pro Bold Condensed'
+
+}
+.cardlogo{
+	position:absolute;
+	bottom:20px;
+	height:3vw;
+	width:80%;
+	left:50%;
+	margin-left:-40%;
+
+}
+.cards .checkmark{
+	color:green;
+	font-size:7vw;
+	position:fixed;
+	left:35%;
+	top:25%;
+}
+.cards .ex{
+	color:red;
+	font-size:7vw;
+	position:fixed;
+	left:35%;
+	top:25%;
+}
+.card_display span{
+	display:none;
+}
+.card_display p{
+	font-size:1.7vw;
+	text-align:left;
+	padding:20px;
+}
+#card1{
+	transform:rotate(-10deg);
+	transition: 0.5s all;
+}
+#card1:hover{
+	transform:scale(1.1,1.1);
+}
+#card2{
+	transform:rotate(10deg);
+	transition: 0.5s all;
+}
+#card2:hover{	
+	transform:scale(1.1,1.1);
+}
+object{
+	pointer-events: none;
+}
+nav .icon_large{
+	font-size: 1.5em;
+}
+nav .navlogo{
+	height:4vw;
+	padding:0px 15px;
+	cursor:pointer;
+}
+
+.navbar-header{
+	cursor:pointer;
+}
+.navbar-right a{
+	font-size:18px;
+	transition:0.3s all;
+	border:none;
+}
+#main-video{
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+	z-index: -100;
+}
+#navbar.transparent{
+	box-shadow: 0px 0px 0px; 
+	background:transparent;
+	border:none;
+}
+#navbar .container-fluid{
+	margin-bottom:0px;
+	transition: 0.5s all;
+	font-size:1.3em;
+}
+
+.row{
+}
+#quote{
+	display:block;
+	padding-bottom:1em;
+}
+
+#quote_link{
+	text-decoration: none;
+	color:#D4514D;
+}
+#quote_link:hover{
+	text-decoration: underline;
+}
+
+a.active{
+	color:white !important;
+}
+a.active:hover{
+	color:#3F3F3F !important;
+}
+
+
+#the_reviews{
+	padding-top:15%;
+	vertical-align:middle;
+	font-size: 2vw;
+	color:white;
+}
+.v-center{
+	height:25vw;
+}
+.reviews{
+	padding-top:40px;
+	padding-bottom:50px;
+	min-height:300px;
+	background-color:black;
+
+}
+.footer{
+	background-color: white;
+	padding-top:50px;
+}
+.footerlogo{
+	width:20vw;
+}
+.laurel{
+	height:25vw;
+}
+#laurel-left{
+	float:left;
+}
+#laurel-right{
+	float:right;
+}
+header .ks_button_div{
+	padding-bottom:250px;
+}
+.shrink{
+	transform: scale(0.9,0.9);
+}
+.footerlist{
+	list-style-type: none;
+}
+.listcontainer{
+	border-left:3px solid #D4514D;
+	opacity:0.7;
+
+}
+.listcontainer li{
+	padding:5px;
+}
+.listcontainer a{
+	color: #3F3F3F;
+}
+.listcontainer a:hover{
+	text-decoration: none;
+	color: #D4514D
+}
+
+@font-face {
+    font-family: 'Myriad Pro Bold Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: font-url('MYRIADPRO-BOLDCOND.woff') format('woff');
+}
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: font-url('MYRIADPRO-REGULAR.woff') format('woff');
+}
