@@ -8,7 +8,7 @@
             <style type="text/css">
             <![CDATA[@font-face {
                 font-family: 'Myriad Pro Bold Condensed';
-				src: local("Myriad Pro Bold Condensed"), url("MYRIADPRO-BOLDCOND.woff") format('woff');
+				src: local("Myriad Pro Bold Condensed"), url("/assets/MYRIADPRO-BOLDCOND.woff") format('woff');
             }
             ]]>
             </style>
