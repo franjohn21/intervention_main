@@ -50,7 +50,7 @@ header{
 	  stroke-dashoffset: 1000;
 	-webkit-animation: test 5s linear;
   	animation: test 5s linear;
-  	height:200px;
+  	height:400px;
 }
 #second-arrow{
 	height:200px;
@@ -73,13 +73,80 @@ header{
     stroke-dashoffset: 0;
   }
 }
+.email{
+	width:45vw;
+	height:3vw;
+	color:black;
+	font-size:2vw;
+}
+.mailchimp input.subscribe{
+	margin-top:50px;
+	font-size:25px;
+	line-height:2em;
+}
+.mailchimp{
+	background-color: black;
+	color:white;
+	font-family:'Myriad Pro Bold Condensed';
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.mailchimp h1{
+	font-size: 5vw;
+}
+.mailchimp p{
+	font-family:'Myriad Pro Regular';
+	font-size:1.5vw;
+}
+
+.metadata-buttons{
+    width:100%;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:13px;
+    color:white;
+}
+#pnp_top{
+	padding-bottom:0px;
+}
+
+.game-metadata{
+    list-style-type: none;
+    padding-left:none;
+    width:90%;
+    font-size:20px;
+    font-family: 'Myriad Pro Bold';
+}
+.game-metadata li{
+    text-align: left;
+    padding:2px 5px 2px 5px;
+    border-radius:10px;
+    line-height:20px;
+    width:22%;
+    background-color:black;
+    display: inline-block;
+}
+li.middle{
+	background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+	border-color: #b92c28;
+}
+.top_metadata{
+    font-family: 'Myriad Pro Regular';
+    font-size: 15px;
+}
+#pnp_preview{
+	height:300px;
+}
 .start_hidden{
 	display:none;
 }
 #download_button{
 	font-family: 'Myriad Pro Bold Condensed';
 	font-size:25px;
-	line-height:2.5em;
+	line-height:1.5em;
 }
 #submit_new{
 	font-size:25px;
@@ -100,6 +167,9 @@ header .landing_main{
 }
 #landing_row{
 	padding-top:250px;
+}
+#displayblock{
+	display:block;
 }
 
 #ks_button_link{
@@ -209,7 +279,7 @@ section{
 #card1:hover{
 	-ms-transform:scale(1.1,1.1); 
 	-webkit-transform:scale(1.1,1.1);
-	transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1) rotate(-5deg);
 }
 #card2{
 	-ms-transform: rotate(10deg);
@@ -220,7 +290,7 @@ section{
 #card2:hover{	
 	-ms-transform:scale(1.1,1.1); 
 	-webkit-transform:scale(1.1,1.1);
-	transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1) rotate(5deg);
 }
 object{
 	pointer-events: none;
@@ -232,16 +302,49 @@ nav .navlogo{
 	height:4vw;
 	padding:0px 15px;
 	cursor:pointer;
+	opacity:0.9;
 }
 
+.active{
+	background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+	border-color: #b92c28;
+	border-radius:5px;
+	background-color: #c12e2a;
+}
+
+#navright a.active:hover{
+	color:#a0a0a0;
+	background-color: #c12e2a;
+	opacity: 0.9;
+}
+
+#navright li a{
+	font-size:18px;
+	border:none;
+	color:white;
+	opacity: 0.9;
+	padding-top:10px;
+}
+#navright li a:hover{
+	color:#a0a0a0;
+	opacity: 1;
+}
+#navright{
+	padding-top:3px;
+}
 .navbar-header{
 	cursor:pointer;
 }
-.navbar-right a{
-	font-size:18px;
-	transition:0.3s all;
-	border:none;
+#nav-fb{
+	padding-bottom:5px;
 }
+#nav-twitter{
+	padding-bottom:5px;
+}
+
 #main-video{
 	position: fixed; 
 	right: 0; 
@@ -263,8 +366,7 @@ nav .navlogo{
 	font-size:1.3em;
 }
 
-.row{
-}
+
 #quote{
 	display:block;
 	padding-bottom:1em;
@@ -278,27 +380,20 @@ nav .navlogo{
 	text-decoration: underline;
 }
 
-a.active{
-	color:white !important;
-}
-a.active:hover{
-	color:#3F3F3F !important;
-}
+
 
 
 #the_reviews{
-	padding-top:15%;
+	padding-top:10%;
 	vertical-align:middle;
 	font-size: 2vw;
 	color:white;
 }
 .v-center{
-	height:25vw;
+	height:20vw;
 }
 .reviews{
-	padding-top:40px;
-	padding-bottom:50px;
-	min-height:300px;
+	padding-top:10px;
 	background-color:black;
 
 }
@@ -310,7 +405,7 @@ a.active:hover{
 	width:20vw;
 }
 .laurel{
-	height:25vw;
+	height:20vw;
 }
 #laurel-left{
 	float:left;
@@ -356,4 +451,10 @@ header .ks_button_div{
     font-style: normal;
     font-weight: normal;
     src: url("<%= asset_path('MYRIADPRO-REGULAR.woff')%>") format('woff');
+}
+@font-face {
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url("<%= asset_path('MYRIADPRO-BOLD.woff')%>") format('woff');
 }

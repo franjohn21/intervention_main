@@ -18,51 +18,48 @@ var controller = (function(){
 		{
 			$("#navbar").addClass("transparent")
 			$("#navbar .container-fluid").removeClass("shrink")
-			//$(".landing_main").css("opacity",1.0/current)
 			$(".landing_main").css("opacity",1)
 			if(current > 30)
 			{
 				$(".landing_main").css("opacity",(0.95-(current/400)));
 
 			}
-			$(".navbar-right a").removeClass("btn btn-danger active")
+			$("#navright a").removeClass("active")
 
 		}
 		else 
 		{
 			$(".landing_main").css("opacity",0);
-			// $(".landing_main").fadeOut();
 			$("#navbar").removeClass("transparent")
 			$("#navbar .container-fluid").addClass("shrink")
-			$(".navbar-right a").removeClass("btn btn-danger active")
+			$("#navright a").removeClass("active")
 			if (current > ($('.cards').first().offset().top)-150)
 			{
-				$("#nav-cards").addClass("btn btn-danger active")
+				$("#nav-cards").addClass("active")
 			}
-			else if(current > ($('.about').first().offset().top)-100)
+			else if(current > ($('.about').first().offset().top)-201)
 			{
-				$("#nav-about").addClass("btn btn-danger active")
+				$("#nav-about").addClass("active")
 
 			}
 			else if(current > ($('.reviews').first().offset().top - 201))
 			{
-				$("#nav-reviews").addClass("btn btn-danger active")
+				$("#nav-reviews").addClass("active")
 			}
 			
 			if(current > $('.about').first().offset().top - 300)
 			{
 				$("#first_rule").addClass("fadeIn");
 				$("#first_rule").show();
-			}
-			if(current > $('.about').first().offset().top - 150)
-			{
-				$("#second_rule").addClass("fadeIn");
-				$("#second_rule").show();
-			}
-			if(current > $('.about').first().offset().top)
-			{
-				$("#third_rule").addClass("fadeIn");
-				$("#third_rule").show();
+				setTimeout(function(){
+					$("#second_rule").addClass("fadeIn");
+					$("#second_rule").show();
+					setTimeout(function(){
+						$("#third_rule").addClass("fadeIn");
+						$("#third_rule").show();
+					}, 1000);
+
+				},1000);
 			}
 		}
 	}
@@ -78,15 +75,15 @@ var controller = (function(){
 		else
 		{
 			$('html, body').animate({
-    			scrollTop: ($('.about').first().offset().top-299),
+    			scrollTop: ($('.about').first().offset().top-200),
     			easing: "easeOutQuart"
 			},1500, function(){
 				$('html, body').animate({
-					scrollTop: ($('.about').first().offset().top - 149)
-				},1500, function(){
+					scrollTop: ($('.about').first().offset().top - 100)
+				},800, function(){
 					$('html, body').animate({
 					scrollTop: ($('.about').first().offset().top + 1)
-					},1000);
+					},800);
 				});
 			});
 		}
@@ -108,10 +105,10 @@ var controller = (function(){
 	}
 
 	function addHatch(data){
-		$("#ks_button").addClass("hatch")
+		$("#ks_button_link").addClass("hatch")
 		// setTimeout($("#ks_button").removeClass("hatch"),1000);
 		clearTimeout(curr_timeout)
-		curr_timeout = setTimeout(function(){$("#ks_button").removeClass("hatch")},3000)
+		curr_timeout = setTimeout(function(){$("#ks_button_link").removeClass("hatch")},3000)
 		
 	}
 	function removeHatch(data){
@@ -165,10 +162,10 @@ var controller = (function(){
 			$("#card1").append("<i class='fa fa-times ex'></i>")
 		}
 		
-		$(".checkmark").fadeOut(500, function(){
+		$(".checkmark").fadeOut(1000, function(){
 			$(".checkmark").remove();
 		});
-		$(".ex").fadeOut(500,function(){
+		$(".ex").fadeOut(1000,function(){
 			$(".ex").remove();
 		});
 
@@ -221,49 +218,33 @@ var controller = (function(){
 		},1000);
 
 	}
-
-	function bindEvents(){
+	function initializeData(){
+		setTimeout(function(){$("header .container-fluid").removeClass("slideRight")},2000)
 		$("#quote").text('"' + quotes[quoteIndex].quote + '"')
 		$("#quote_author").text(" - " + quotes[quoteIndex].attribution)
 		$.ajax({
 			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair'
 		}).done(addNewPair)
+		$("#quote_link").text(quotes[quoteIndex].link_name)
+		$("#quote_link").attr("href",quotes[quoteIndex].link)
+		rotateQuote();
+	}
 
+	function bindEvents(){
+		initializeData();
+		$(window).bind("mousewheel", function() {
+		    $("html, body").stop();
+		});
 		$(window).scroll(checkScroll);
 		$("#ks_button").mouseover(addHatch);
 		$("#nav-about").click(scrollToAbout);
 		$(".navbar-header").click(scrollToTop);
-		setTimeout(function(){$("header .container-fluid").removeClass("slideRight")},2000)
-		$(window).bind("mousewheel", function() {
-		    $("html, body").stop();
-		});
 		$("#nav-reviews").click(scrollToReview)
 		$("#nav-cards").click(scrollToCards)
 		$(".cards").on("click",".card_display",handleVote)
 		$("#create_new").submit(submitNew);
-
-		rotateQuote();
-		//$("#ks_button").mouseout(removeHatch);
 	}
 	return {
 		bindEvents: bindEvents
 	}
 })();
-
-
-
-
-// $(document).ready(function() {
-//     $("#quoteblock").click(function() {
-//         rotatequote ()
-//       });
-// });
- 
-// function rotatequote() {
-//     quoteindex = (quoteindex + 1) % quotes.length;
-//     changequote_withfade(quoteindex);
-// }
-// function changequote_withfade(index) {
-//     $("#quoteblock-inner").fadeOut(fadetime, function() { changequote(quoteindex); })
-//       .fadeIn(fadetime);
-// }
