@@ -92,7 +92,7 @@ var controller = (function(){
 	function scrollToReview(evt){
 		evt.preventDefault();
 		$('html, body').animate({
-		    scrollTop: ($('.reviews').first().offset().top) - 200,
+		    scrollTop: ($('.reviews').first().offset().top) - 190,
 		    easing: "easeOutQuart"
 		},1000)
 	}
