@@ -1,0 +1,570 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require_tree ../../../vendor/assets/stylesheets/bootstrap
+ *= require_tree ../../../vendor/assets/stylesheets/animation
+ */
+//= depend_on_asset "MYRIADPRO-BOLDCOND.woff"
+//= depend_on_asset "MYRIADPRO-REGULAR.woff"
+//= depend_on_asset "MYRIADPRO-BOLD.woff"
+
+body, html{
+}
+header{
+	height:800px;
+}
+
+
+.about h1{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+}
+#first_row{
+	padding-top:50px;
+}
+.about .row{
+	padding-bottom:30px;
+	padding-top:30px;
+}
+#errors{
+	color:red;
+}
+.about p{
+	font-family: 'Myriad Pro Regular';
+}
+#first-arrow{
+	padding-top:50px;
+	transform: rotate(10deg) ;
+	stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	-webkit-animation: test 5s linear;
+  	animation: test 5s linear;
+  	height:400px;
+}
+#second-arrow{
+	height:200px;
+	transform: rotate(180deg) ;
+
+	stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	-webkit-animation: test 5s linear;
+  	animation: test 5s linear;
+}
+
+@-webkit-keyframes test {
+	to {
+	  stroke-dashoffset: 0;
+
+	}
+}
+@keyframes test {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.email{
+	width:45vw;
+	height:3vw;
+	color:black;
+	font-size:2vw;
+}
+.mailchimp input.subscribe{
+	margin-top:50px;
+	font-size:25px;
+	line-height:2em;
+}
+.mailchimp{
+	background-color: black;
+	color:white;
+	font-family:'Myriad Pro Bold Condensed';
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.mailchimp h1{
+	font-size: 5vw;
+}
+.mailchimp p{
+	font-family:'Myriad Pro Regular';
+	font-size:1.5vw;
+}
+
+.metadata-buttons{
+    width:100%;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:13px;
+    color:white;
+}
+#pnp_top{
+	padding-bottom:0px;
+}
+
+.game-metadata{
+    list-style-type: none;
+    padding-left:none;
+    width:90%;
+    font-size:20px;
+    font-family: 'Myriad Pro Bold';
+}
+.game-metadata li{
+    text-align: left;
+    padding:2px 5px 2px 5px;
+    border-radius:10px;
+    line-height:20px;
+    width:22%;
+    background-color:black;
+    display: inline-block;
+}
+
+li.middle{
+	background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+	border-color: #b92c28;
+}
+.top_metadata{
+    font-family: 'Myriad Pro Regular';
+    font-size: 15px;
+}
+#pnp_preview{
+	height:300px;
+}
+.start_hidden{
+	display:none;
+}
+#download_button{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:25px;
+	line-height:1.5em;
+}
+#submit_new{
+	font-size:25px;
+	line-height:2em;
+}
+.newcard h1{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+	padding-top:30px;
+
+}
+.newcard h2{
+	font-family: 'Myriad Pro Regular';
+}
+header .landing_main{
+	padding:0px;
+	padding-top:50px;
+	margin:auto 0px;
+	opacity: 1;
+	position:fixed;
+	color:white;
+}
+#landing_row{
+	padding-top:250px;
+}
+#displayblock{
+	display:block;
+}
+
+#ks_button_link{
+	width:80%;
+	padding:0px;
+	border:none;
+	background:transparent;
+	margin: 0 auto;
+}
+#ks_button{
+	width:100%;
+}
+#ks_button:hover{
+	opacity: 0.8;
+	margin:0px;
+}
+
+#tagline{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:5vw;
+	color:white;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+}
+.cards{
+	color:white;
+	text-align: center;
+	font-family: 'Myriad Pro Bold Condensed';
+	padding-top:50px;
+	background-color: #143C78;
+	padding-bottom:100px;
+
+}
+.newcard{
+	background-color:#eee;
+	text-align: center;
+	padding-bottom:50px;
+}
+section{
+	position:relative;
+	z-index:1;
+	background-color:white;
+	padding-bottom:20px;
+	font-family: 'Myriad Pro Regular'
+}
+.cards h1{
+	padding-bottom:30px;
+	font-size:4vw;
+}
+.card_display{
+	background-color:black;
+	height:30vw;
+	border-radius:15px;
+	cursor:pointer;
+	text-align: center;
+ 	overflow-y:hidden;
+}
+#vs{
+	padding-top:20%;
+	font-size:10vw;
+}
+.form{
+	padding-top: 50px;
+	color:black;
+	font-size:30px;
+	font-family: 'Myriad Pro Bold Condensed'
+
+}
+.cardlogo{
+	position:absolute;
+	bottom:20px;
+	height:3vw;
+	width:80%;
+	left:50%;
+	margin-left:-40%;
+
+}
+.cards .checkmark{
+	color:green;
+	font-size:7vw;
+	position:fixed;
+	left:35%;
+	top:25%;
+}
+.cards .ex{
+	color:red;
+	font-size:7vw;
+	position:fixed;
+	left:35%;
+	top:25%;
+}
+.card_display span{
+	display:none;
+}
+.card_display p{
+	font-size:1.7vw;
+	text-align:left;
+	padding:20px;
+}
+#card1{
+	-ms-transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	transform:rotate(-10deg);
+	transition: 0.5s all;
+}
+#card1:hover{
+	-ms-transform:scale(1.1,1.1); 
+	-webkit-transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1) rotate(-5deg);
+}
+#card2{
+	-ms-transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+	transform:rotate(10deg);
+	transition: 0.5s all;
+}
+#card2:hover{	
+	-ms-transform:scale(1.1,1.1); 
+	-webkit-transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1) rotate(5deg);
+}
+object{
+	pointer-events: none;
+}
+nav .icon_large{
+	font-size: 1.5em;
+}
+nav .navlogo{
+	height:4vw;
+	padding:0px 15px;
+	cursor:pointer;
+	opacity:0.9;
+}
+
+.active{
+	background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+	border-color: #b92c28;
+	border-radius:5px;
+	background-color: #c12e2a;
+}
+
+#navright a.active:hover{
+	color:#a0a0a0;
+	background-color: #c12e2a;
+	opacity: 0.9;
+}
+
+#navright li a{
+	font-size:18px;
+	border:none;
+	color:white;
+	opacity: 0.9;
+	padding-top:10px;
+}
+#navright li a:hover{
+	color:#a0a0a0;
+	opacity: 1;
+}
+#navright{
+	padding-top:3px;
+}
+.navbar-header{
+	cursor:pointer;
+}
+#nav-fb{
+	padding-bottom:5px;
+}
+#nav-twitter{
+	padding-bottom:5px;
+}
+
+#main-video{
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+	z-index: -100;
+	background-color:black;
+	
+}
+#navbar.transparent{
+	box-shadow: 0px 0px 0px; 
+	background:transparent;
+	border:none;
+}
+#navbar .container-fluid{
+	margin-bottom:0px;
+	transition: 0.5s all;
+	font-size:1.3em;
+}
+
+
+#quote{
+	display:block;
+	padding-bottom:1em;
+}
+
+#quote_link{
+	text-decoration: none;
+	color:#D4514D;
+}
+#quote_link:hover{
+	text-decoration: underline;
+}
+
+
+
+
+#the_reviews{
+	padding-top:10%;
+	vertical-align:middle;
+	font-size: 2vw;
+	color:white;
+}
+.v-center{
+	height:20vw;
+}
+.reviews{
+	padding-top:10px;
+	background-color:black;
+
+}
+.footer{
+	background-color: white;
+	padding-top:50px;
+}
+.footerlogo{
+	width:20vw;
+}
+.laurel{
+	height:20vw;
+}
+#laurel-left{
+	float:left;
+}
+#laurel-right{
+	float:right;
+}
+header .ks_button_div{
+	padding-bottom:75px;
+}
+.shrink{
+	-ms-transform:scale(0.9,0.9);
+	-webkit-transform: scale(0.9,0.9);
+	transform: scale(0.9,0.9);
+}
+.footerlist{
+	list-style-type: none;
+}
+.listcontainer{
+	border-left:3px solid #D4514D;
+	opacity:0.7;
+
+}
+.listcontainer li{
+	padding:5px;
+}
+.listcontainer a{
+	color: #3F3F3F;
+}
+.listcontainer a:hover{
+	text-decoration: none;
+	color: #D4514D
+}
+@media (max-width: 500px)
+{
+	header .landing_main{
+		position:relative;
+	}
+	.landing_main .fa-chevron-down{
+		display:none;
+	}
+	header{
+		height:100%;
+	}
+	#tagline{
+		font-size:1em;
+	}
+	#create_new textarea{
+		width:100%;
+	}
+	#pnp_preview{
+		display:none;
+	}
+	#the_reviews{
+		padding-top:5%;
+		font-size:0.6em;
+	}
+	.about h1{
+		font-size:2em;
+	}
+	.creative_license{
+		display:none;
+	}
+	#landing_row{
+		padding:0px;
+		margin:0px;
+	}
+	header .ks_button_div{
+		padding-bottom:50px;
+	}
+	#first_row .col-xs-1{
+		display:none;
+	}
+	#first_row .col-xs-11{
+		width:100%;
+		padding:0px;
+	}
+	.about .container-fluid{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.about .col-xs-12{
+		padding-right:0px;
+	}
+	.game-metadata li{
+		width:30%;
+	}
+	.cards {
+		display:none;
+	}
+	.newcard h1{
+		font-size:2em;
+	}
+	.newcard h2{
+		font-size:1em;
+	}
+	.mailchimp h1{
+		font-size:2em;
+	}
+	.mailchimp p{
+		font-size:1em;
+	}
+	.email{
+		width:100%;
+		height:2em;
+		font-size:2em;
+	}
+	.start_hidden{
+		display:block;
+	}
+}
+
+@media (max-width: 860px)
+{
+	#navbar{
+		display:none;
+	}
+	#main-video{
+		display:none;
+	}
+	header{
+		background-color:black;
+	}
+}
+@media (max-width: 900px)
+{
+	#pnp_top{
+		padding-top:0px;
+	}
+	.about .col-md-12{
+		padding-bottom:0px;
+	}
+}
+.creative_license{
+	float:right;
+}
+@font-face {
+    font-family: 'Myriad Pro Bold Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: url("<%= asset_path('MYRIADPRO-BOLDCOND.woff')%>") format('woff');
+}
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url("<%= asset_path('MYRIADPRO-REGULAR.woff')%>") format('woff');
+}
+@font-face {
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url("<%= asset_path('MYRIADPRO-BOLD.woff')%>") format('woff');
+}

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root 'application#index'
+
+  get '/share.html' => 'application#share'
+  get '/share' => 'application#share'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
