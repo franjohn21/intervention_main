@@ -33,7 +33,7 @@ var controller = (function(){
 			$("#navbar").removeClass("transparent")
 			$("#navbar .container-fluid").addClass("shrink")
 			$("#navright a").removeClass("active")
-			if (current > ($('.cards').first().offset().top)-150)
+			if (current > ($('#vote').first().offset().top)-150)
 			{
 				$("#nav-cards").addClass("active")
 			}
@@ -99,7 +99,7 @@ var controller = (function(){
 	function scrollToCards(evt){
 		evt.preventDefault();
 		$('html,body').animate({
-			scrollTop: ($('.cards').first().offset().top),
+			scrollTop: ($('#vote').first().offset().top),
 			easing: "easeOutQuart"
 		},1000)
 	}
@@ -241,7 +241,7 @@ var controller = (function(){
 		$(".navbar-header").click(scrollToTop);
 		$("#nav-reviews").click(scrollToReview)
 		$("#nav-cards").click(scrollToCards)
-		$(".cards").on("click",".card_display",handleVote)
+		$("#vote").on("click",".card_display",handleVote)
 		$("#create_new").submit(submitNew);
 	}
 	return {
