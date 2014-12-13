@@ -1,20 +1,22 @@
 <header>
 	<div class="container-fluid text-center landing_main col-md-12 slideRight">
 		<div class="row col-md-8 col-md-offset-2 text-center" id="landing_row">
+		<a href="http://kck.st/1yKBnus" id="ksfundedlink"><img id="ksfunded" src="<%= asset_path 'kickstarter-badge-funded.svg' %>" /></a>
 			<h1 id="tagline">A Free Party Game for Everyone's Worst Habits</h1>
 		</div>
 		<div class="row col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3 text-center ks_button_div">
-			<%= form_tag charges_path do %>
+			<%= form_tag charges_path, :id => "newcharge" do %>
 			
 			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-			          data-description="One Intervention Pre-Order"
+			          data-description="Pre-Order (Est. shipping June 2015) "
 			          data-amount="2500"
-			          data-image="<%= asset_path 'favicon.ico' %>"
+			          data-image="<%= asset_path 'Intervention-Logo-Fixed.png' %>"
 			          data-name="Intervention"
 			          data-zip-code="true"
 			          data-billingAddress='true'
 			          data-shippingAddress='true'
+			          data-allow-remember-me='false'
 			          >
 			          </script>
 			<% end %>

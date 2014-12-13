@@ -1,10 +1,11 @@
 class ChargesController < ApplicationController
 
 	def new
-		puts "*"*50
-		puts ENV['SECRET_KEY']
-	end
 
+	end
+	def test
+		render :create
+	end
 	def create
 	  # Amount in cents
 	  @amount = 2500
@@ -12,11 +13,11 @@ class ChargesController < ApplicationController
 	    :email => params[:stripeEmail],	
 	    :card  => params[:stripeToken]
 	  )
-
+	  @email = params[:stripeEmail];
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @amount,
-	    :description => 'Rails Stripe customer',
+	    :description => 'Intervention Pre-order',
 	    :currency    => 'usd',
 	    :shipping 	 => {
 	    	:address => { :line1 => params[:stripeShippingAddressLine1], :city => params[:stripeShippingAddressCity], :country => params[:stripeShippingAddressCountry], :line2 => params[:stripeShippingAddressApt], :postal_code => params[:stripeShippingAddressZip], :state => params[:stripeShippingAddressState]},
@@ -24,8 +25,6 @@ class ChargesController < ApplicationController
 	    },
 	    :metadata => {:line1 => params[:stripeShippingAddressLine1], :city => params[:stripeShippingAddressCity], :country => params[:stripeShippingAddressCountry], :line2 => params[:stripeShippingAddressApt], :postal_code => params[:stripeShippingAddressZip], :state => params[:stripeShippingAddressState]}
 	  )
-
-	  p charge
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path

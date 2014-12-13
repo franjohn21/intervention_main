@@ -210,8 +210,7 @@ var controller = (function(){
 	}
 
 	function scrollToTop(evt){
-		evt.preventDefault();
-		console.log("clicking?")
+		console.log("HERE")
 		$('html, body').animate({
     			scrollTop: 0,
     			easing: "easeOutQuart"
@@ -230,6 +229,31 @@ var controller = (function(){
 		rotateQuote();
 	}
 
+	function submitCharge(e){
+		e.preventDefault();
+		console.log('made it?')
+		$.ajax({
+			url: "/charges",
+			method: "POST",
+			data: this.serialize()
+		})
+	}
+
+	function redirectHome(e){
+		console.log("hello?")
+		window.location.href = "/"
+	}
+
+	function fixStripeButton(){
+		el = $(".stripe-button-el")
+		el.text("Miss the Kickstarter? Preorder Now!")
+		el.removeClass("stripe-button-el")
+		el.addClass("btn")
+		el.addClass("btn-success")
+		el.attr("id","stripebutton")
+
+	}
+
 	function bindEvents(){
 		initializeData();
 		$(window).bind("mousewheel", function() {
@@ -243,6 +267,10 @@ var controller = (function(){
 		$("#nav-cards").click(scrollToCards)
 		$("#vote").on("click",".card_display",handleVote)
 		$("#create_new").submit(submitNew);
+		$("#newcharge").submit(submitCharge);
+		$("#charge-header").click(redirectHome);
+		$("#ksfundedlink").click(redirectKS);
+		fixStripeButton();
 	}
 	return {
 		bindEvents: bindEvents

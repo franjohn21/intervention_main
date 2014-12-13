@@ -20,12 +20,27 @@
 //= depend_on_asset "MYRIADPRO-REGULAR.woff"
 //= depend_on_asset "MYRIADPRO-BOLD.woff"
 
+header .stripe-button-el{
+	background-color: red;
+}
+#stripebutton{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size: 1.4em;
+}
 body, html{
+	min-height:100%;
+	position:relative;
 }
 header{
 	height:800px;
 }
+#ksfunded{
+	height:6em;
+}
 
+#ksfunded:hover{
+	transform: scale(1.2,1.2);
+}
 
 .about h1{
 	font-family: 'Myriad Pro Bold Condensed';
@@ -172,7 +187,7 @@ header .landing_main{
 	color:white;
 }
 #landing_row{
-	padding-top:250px;
+	padding-top:100px;
 }
 #displayblock{
 	display:block;
@@ -195,7 +210,7 @@ header .landing_main{
 
 #tagline{
 	font-family: 'Myriad Pro Bold Condensed';
-	font-size:5vw;
+	font-size:4em;
 	color:white;
 	text-shadow: 0px 0px 10px rgba(0,0,0,0.35);
 	text-rendering: optimizeLegibility;
@@ -459,7 +474,7 @@ header .ks_button_div{
 		height:100%;
 	}
 	#tagline{
-		font-size:1em;
+		font-size:2em;
 	}
 	#create_new textarea{
 		width:100%;
