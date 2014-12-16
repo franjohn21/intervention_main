@@ -22,11 +22,12 @@
 .red{
 	color: red;
 }
+
 #newcharge{
 	margin-top:20px;
 }
-#chargebody{
-	padding-top: 75px;
+#chargenavbar{
+	position:relative;
 }
 #preordernow{
 	font-family: 'Myriad Pro Bold Condensed';
@@ -54,6 +55,8 @@ header{
 }
 
 #ksfunded:hover{
+	-ms-transform: scale(1.2,1.2); /* IE 9 */
+	-webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
 	transform: scale(1.2,1.2);
 }
 
@@ -335,7 +338,7 @@ nav .icon_large{
 	font-size: 1.5em;
 }
 nav .navlogo{
-	height:4vw;
+	height:3em;
 	padding:0px 15px;
 	cursor:pointer;
 	opacity:0.9;
@@ -482,6 +485,9 @@ header .ks_button_div{
 	header .landing_main{
 		position:relative;
 	}
+	#ksfunded{
+		height:3em;
+	}
 	.landing_main .fa-chevron-down{
 		display:none;
 	}
@@ -561,6 +567,7 @@ header .ks_button_div{
 	#navbar{
 		display:none;
 	}
+
 	#main-video{
 		display:none;
 	}
