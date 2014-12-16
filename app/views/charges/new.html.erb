@@ -1,0 +1,100 @@
+<div class="container">
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<h3><span class="bold">How many copies of Interventions do you want?</span></h3>
+<select name="preorderquantity" id="select-quantity" onchange="controller.changeQuantity()">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+<br/>
+
+<h5><span class="bold">Total: </span>$ <span id="preorder_total">25.00</span></h5>
+<h5><span class="bold">Estimated Shipping: </span>June 2015 </h5>
+
+<%= form_tag charges_path, :id => 'newcharge' do %>
+	<input type="submit" value="Pay with card" id="customButton" class="btn btn-primary checkout-button"/>
+	<br />
+	<br />
+	<h5><span class="bold">Outside U.S. costs more for shipping. </h5>
+	<input type="submit" value="Outside U.S. click here" id="intlbutton" class="btn btn-danger checkout-button"/>
+	<script>
+	  var handler = StripeCheckout.configure({
+	    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+	    image: "<%= asset_path 'Intervention-Logo-Fixed.png' %>",
+	    token: function(token, args) {
+	 		 var quantity = $("#select-quantity").val();
+	    	$.ajax({	
+	    		url: "/charges",
+	    		method: "POST",
+	    		data: {token: token, args: args, quantity: quantity},
+	    	}).done(function(response){ 
+	    		$("body").html(response)
+	        }).fail(function(){
+	        	$(".red").text("Something went wrong. Your card was not charged. Please try again or contact support@playintervention.com")
+	        })
+	    }
+	  });	  
+	  $('#intlbutton').on('click', function(e) {
+	  var quantity = $("#select-quantity").val();
+	  var wording = (quantity === "1" ? " copy " : " copies ");
+
+	    // Open Checkout with further options
+	    handler.open({
+	      name: 'Intervention',
+	      description: quantity + wording + 'of intervention ($'+quantity*40 + '.00)',
+	      amount: quantity*4000,
+	      billingAddress: "true",
+	      shippingAddress: "true",
+	      allowRememberMe: "false"
+	    });
+	    e.preventDefault();
+	  });
+
+
+	  $('#customButton').on('click', function(e) {
+	  var quantity = $("#select-quantity").val();
+	  var wording = (quantity === "1" ? " copy " : " copies ");
+
+	    // Open Checkout with further options
+	    handler.open({
+	      name: 'Intervention',
+	      description: quantity + wording + 'of intervention ($'+quantity*25 + '.00)',
+	      amount: quantity*2500,
+	      billingAddress: "true",
+	      shippingAddress: "true",
+	      allowRememberMe: "false"
+	    });
+	    e.preventDefault();
+	  });
+
+	  // Close Checkout on page navigation
+	  $(window).on('popstate', function() {
+	    handler.close();
+	  });
+	</script>
+
+
+
+<% end %>
+
+<h5 class="red">
+<% if flash[:error] %>
+ Something went wrong. Please contact support@playintervention.com: <br/> <%= flash[:error] %>
+<% end %>
+</h5>
+</div>
+
+
+
+
+
+
+

@@ -210,7 +210,6 @@ var controller = (function(){
 	}
 
 	function scrollToTop(evt){
-		console.log("HERE")
 		$('html, body').animate({
     			scrollTop: 0,
     			easing: "easeOutQuart"
@@ -229,18 +228,15 @@ var controller = (function(){
 		rotateQuote();
 	}
 
-	function submitCharge(e){
-		e.preventDefault();
-		console.log('made it?')
+	function submitCharge(){
 		$.ajax({
 			url: "/charges",
 			method: "POST",
-			data: this.serialize()
+			data: $(this).serialize()
 		})
 	}
 
 	function redirectHome(e){
-		console.log("hello?")
 		window.location.href = "/"
 	}
 
@@ -253,6 +249,15 @@ var controller = (function(){
 		el.attr("id","stripebutton")
 
 	}
+	function changePreorderQuantity(e){
+		$("#preorder_total").text($(this).val()*25 + ".00")
+		$("#checkoutbutton").attr("data-amount", $(this).val()*25 + "00")
+	}
+	function redirectNav(e){
+		e.preventDefault();
+		window.location.href = $(this).attr("href")
+	}
+
 
 	function bindEvents(){
 		initializeData();
@@ -268,11 +273,12 @@ var controller = (function(){
 		$("#vote").on("click",".card_display",handleVote)
 		$("#create_new").submit(submitNew);
 		$("#newcharge").submit(submitCharge);
-		$("#charge-header").click(redirectHome);
-		$("#ksfundedlink").click(redirectKS);
-		fixStripeButton();
+		$(".redirectHome").click(redirectHome);
+		$(".redirectNav").click(redirectNav)
+		$("body").on("change","#select-quantity",changePreorderQuantity)
 	}
 	return {
-		bindEvents: bindEvents
+		bindEvents: bindEvents,
+		changeQuantity: changePreorderQuantity
 	}
 })();

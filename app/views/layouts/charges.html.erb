@@ -18,7 +18,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="clearfix">
+<body class="clearfix" id="chargebody">
+<%= render 'chargenavbar' %>
+
 <%= yield %>
 
 </body>
