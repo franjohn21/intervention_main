@@ -174,11 +174,11 @@ var controller = (function(){
 
 
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair'
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair'
 		}).done(addNewPair)
 
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair',
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair',
 			method: 'POST',
 			data: {winner_id: winner_id, loser_id: loser_id, both_suck: false}
 		})
@@ -198,7 +198,7 @@ var controller = (function(){
 		data = $(this).serialize()
 
 		$.ajax({
-			url: "http://int-voting-api.herokuapp.com/api/v0/newcard",
+			url: "https://int-voting-api.herokuapp.com/api/v0/newcard",
 			method: "POST",
 			data: data
 
@@ -221,7 +221,7 @@ var controller = (function(){
 		$("#quote").text('"' + quotes[quoteIndex].quote + '"')
 		$("#quote_author").text(" - " + quotes[quoteIndex].attribution)
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair'
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair'
 		}).done(addNewPair)
 		$("#quote_link").text(quotes[quoteIndex].link_name)
 		$("#quote_link").attr("href",quotes[quoteIndex].link)
