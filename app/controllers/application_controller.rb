@@ -6,6 +6,5 @@ class ApplicationController < ActionController::Base
   end
 
   def share
-  	puts "hello?"
   end
 end

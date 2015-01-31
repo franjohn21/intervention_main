@@ -19,13 +19,46 @@
 //= depend_on_asset "MYRIADPRO-BOLDCOND.woff"
 //= depend_on_asset "MYRIADPRO-REGULAR.woff"
 //= depend_on_asset "MYRIADPRO-BOLD.woff"
+.red{
+	color: red;
+}
 
+#newcharge{
+	margin-top:20px;
+}
+#chargenavbar{
+	position:relative;
+}
+#preordernow{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size:1.5em;
+	padding-left:20px;
+	padding-right: 20px;
+}
+
+header .stripe-button-el{
+	background-color: red;
+}
+#stripebutton{
+	font-family: 'Myriad Pro Bold Condensed';
+	font-size: 1.4em;
+}
 body, html{
+	min-height:100%;
+	position:relative;
 }
 header{
 	height:800px;
 }
+#ksfunded{
+	height:6em;
+}
 
+#ksfunded:hover{
+	-ms-transform: scale(1.2,1.2); /* IE 9 */
+	-webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
+	transform: scale(1.2,1.2);
+}
 
 .about h1{
 	font-family: 'Myriad Pro Bold Condensed';
@@ -172,7 +205,7 @@ header .landing_main{
 	color:white;
 }
 #landing_row{
-	padding-top:250px;
+	padding-top:100px;
 }
 #displayblock{
 	display:block;
@@ -195,13 +228,13 @@ header .landing_main{
 
 #tagline{
 	font-family: 'Myriad Pro Bold Condensed';
-	font-size:5vw;
+	font-size:4em;
 	color:white;
 	text-shadow: 0px 0px 10px rgba(0,0,0,0.35);
 	text-rendering: optimizeLegibility;
 	text-transform: uppercase;
 }
-.cards{
+#vote{
 	color:white;
 	text-align: center;
 	font-family: 'Myriad Pro Bold Condensed';
@@ -222,7 +255,7 @@ section{
 	padding-bottom:20px;
 	font-family: 'Myriad Pro Regular'
 }
-.cards h1{
+#vote h1{
 	padding-bottom:30px;
 	font-size:4vw;
 }
@@ -234,7 +267,7 @@ section{
 	text-align: center;
  	overflow-y:hidden;
 }
-#vs{
+h1#vs{
 	padding-top:20%;
 	font-size:10vw;
 }
@@ -254,14 +287,14 @@ section{
 	margin-left:-40%;
 
 }
-.cards .checkmark{
+#vote .checkmark{
 	color:green;
 	font-size:7vw;
 	position:fixed;
 	left:35%;
 	top:25%;
 }
-.cards .ex{
+#vote .ex{
 	color:red;
 	font-size:7vw;
 	position:fixed;
@@ -305,7 +338,7 @@ nav .icon_large{
 	font-size: 1.5em;
 }
 nav .navlogo{
-	height:4vw;
+	height:3em;
 	padding:0px 15px;
 	cursor:pointer;
 	opacity:0.9;
@@ -328,11 +361,11 @@ nav .navlogo{
 }
 
 #navright li a{
-	font-size:18px;
+	font-size:15px;
 	border:none;
 	color:white;
 	opacity: 0.9;
-	padding-top:10px;
+	padding-top:15px;
 }
 #navright li a:hover{
 	color:#a0a0a0;
@@ -452,6 +485,9 @@ header .ks_button_div{
 	header .landing_main{
 		position:relative;
 	}
+	#ksfunded{
+		height:3em;
+	}
 	.landing_main .fa-chevron-down{
 		display:none;
 	}
@@ -459,7 +495,7 @@ header .ks_button_div{
 		height:100%;
 	}
 	#tagline{
-		font-size:1em;
+		font-size:2em;
 	}
 	#create_new textarea{
 		width:100%;
@@ -501,7 +537,7 @@ header .ks_button_div{
 	.game-metadata li{
 		width:30%;
 	}
-	.cards {
+	#vote {
 		display:none;
 	}
 	.newcard h1{
@@ -531,6 +567,7 @@ header .ks_button_div{
 	#navbar{
 		display:none;
 	}
+
 	#main-video{
 		display:none;
 	}

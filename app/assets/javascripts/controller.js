@@ -33,7 +33,7 @@ var controller = (function(){
 			$("#navbar").removeClass("transparent")
 			$("#navbar .container-fluid").addClass("shrink")
 			$("#navright a").removeClass("active")
-			if (current > ($('.cards').first().offset().top)-150)
+			if (current > ($('#vote').first().offset().top)-150)
 			{
 				$("#nav-cards").addClass("active")
 			}
@@ -99,7 +99,7 @@ var controller = (function(){
 	function scrollToCards(evt){
 		evt.preventDefault();
 		$('html,body').animate({
-			scrollTop: ($('.cards').first().offset().top),
+			scrollTop: ($('#vote').first().offset().top),
 			easing: "easeOutQuart"
 		},1000)
 	}
@@ -174,11 +174,11 @@ var controller = (function(){
 
 
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair'
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair'
 		}).done(addNewPair)
 
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair',
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair',
 			method: 'POST',
 			data: {winner_id: winner_id, loser_id: loser_id, both_suck: false}
 		})
@@ -198,7 +198,7 @@ var controller = (function(){
 		data = $(this).serialize()
 
 		$.ajax({
-			url: "http://int-voting-api.herokuapp.com/api/v0/newcard",
+			url: "https://int-voting-api.herokuapp.com/api/v0/newcard",
 			method: "POST",
 			data: data
 
@@ -210,8 +210,6 @@ var controller = (function(){
 	}
 
 	function scrollToTop(evt){
-		evt.preventDefault();
-		console.log("clicking?")
 		$('html, body').animate({
     			scrollTop: 0,
     			easing: "easeOutQuart"
@@ -223,12 +221,43 @@ var controller = (function(){
 		$("#quote").text('"' + quotes[quoteIndex].quote + '"')
 		$("#quote_author").text(" - " + quotes[quoteIndex].attribution)
 		$.ajax({
-			url: 'http://int-voting-api.herokuapp.com/api/v0/cardpair'
+			url: 'https://int-voting-api.herokuapp.com/api/v0/cardpair'
 		}).done(addNewPair)
 		$("#quote_link").text(quotes[quoteIndex].link_name)
 		$("#quote_link").attr("href",quotes[quoteIndex].link)
 		rotateQuote();
 	}
+
+	function submitCharge(){
+		$.ajax({
+			url: "/charges",
+			method: "POST",
+			data: $(this).serialize()
+		})
+	}
+
+	function redirectHome(e){
+		window.location.href = "/"
+	}
+
+	function fixStripeButton(){
+		el = $(".stripe-button-el")
+		el.text("Miss the Kickstarter? Preorder Now!")
+		el.removeClass("stripe-button-el")
+		el.addClass("btn")
+		el.addClass("btn-success")
+		el.attr("id","stripebutton")
+
+	}
+	function changePreorderQuantity(e){
+		$("#preorder_total").text($(this).val()*25 + ".00")
+		$("#checkoutbutton").attr("data-amount", $(this).val()*25 + "00")
+	}
+	function redirectNav(e){
+		e.preventDefault();
+		window.location.href = $(this).attr("href")
+	}
+
 
 	function bindEvents(){
 		initializeData();
@@ -241,10 +270,15 @@ var controller = (function(){
 		$(".navbar-header").click(scrollToTop);
 		$("#nav-reviews").click(scrollToReview)
 		$("#nav-cards").click(scrollToCards)
-		$(".cards").on("click",".card_display",handleVote)
+		$("#vote").on("click",".card_display",handleVote)
 		$("#create_new").submit(submitNew);
+		$("#newcharge").submit(submitCharge);
+		$(".redirectHome").click(redirectHome);
+		$(".redirectNav").click(redirectNav)
+		$("body").on("change","#select-quantity",changePreorderQuantity)
 	}
 	return {
-		bindEvents: bindEvents
+		bindEvents: bindEvents,
+		changeQuantity: changePreorderQuantity
 	}
 })();

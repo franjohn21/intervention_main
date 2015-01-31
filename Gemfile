@@ -27,6 +27,9 @@ gem 'rails_12factor', group: :production
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'newrelic_rpm'
+gem 'unicorn'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
