@@ -8,6 +8,4 @@ class ApplicationController < ActionController::Base
   def share
   end
 
-  def google07409281551d49d2
-  end
 end

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get '/share.html' => 'application#share'
   get '/share' => 'application#share'
-  get '/google07409281551d49d2.html' => 'application#google07409281551d49d2'
   resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
