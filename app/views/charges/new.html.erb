@@ -1,7 +1,7 @@
 <div class="container">
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
-<h3><span class="bold">How many copies of Intervention do you want?</span></h3>
+<h3><span class="bold">We are all sold out of Intervention! You can preorder copies for our next production run here. How many copies would you like?</span></h3>
 <select name="preorderquantity" id="select-quantity" onchange="controller.changeQuantity()">
 	<option value="1">1</option>
 	<option value="2">2</option>
@@ -17,7 +17,7 @@
 <br/>
 
 <h5><span class="bold">Total: </span>$ <span id="preorder_total">25.00</span></h5>
-<h5><span class="bold">Estimated Shipping: </span>June 2015 </h5>
+<h5><span class="bold">Estimated Shipping: </span>Summer 2016 </h5>
 
 <%= form_tag charges_path, :id => 'newcharge' do %>
 	<input type="submit" value="Pay with card" id="customButton" class="btn btn-primary checkout-button"/>
