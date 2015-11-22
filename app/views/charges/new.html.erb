@@ -16,7 +16,7 @@
 </select>
 <br/>
 
-<h5><span class="bold">Total: </span>$ <span id="preorder_total">25.00</span></h5>
+<h5><span class="bold">Total: </span>$ <span id="preorder_total">35.00</span></h5>
 <h5><span class="bold">Estimated Shipping: </span>Summer 2016 </h5>
 
 <%= form_tag charges_path, :id => 'newcharge' do %>
@@ -49,8 +49,8 @@
 	    // Open Checkout with further options
 	    handler.open({
 	      name: 'Intervention',
-	      description: quantity + wording + 'of intervention ($'+quantity*40 + '.00)',
-	      amount: quantity*4000,
+	      description: quantity + wording + 'of intervention ($'+quantity*55 + '.00)',
+	      amount: quantity*5500,
 	      billingAddress: "true",
 	      shippingAddress: "true",
 	      allowRememberMe: "false"
@@ -66,8 +66,8 @@
 	    // Open Checkout with further options
 	    handler.open({
 	      name: 'Intervention',
-	      description: quantity + wording + 'of intervention ($'+quantity*25 + '.00)',
-	      amount: quantity*2500,
+	      description: quantity + wording + 'of intervention ($'+quantity*35 + '.00)',
+	      amount: quantity*3500,
 	      billingAddress: "true",
 	      shippingAddress: "true",
 	      allowRememberMe: "false"

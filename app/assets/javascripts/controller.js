@@ -250,8 +250,8 @@ var controller = (function(){
 
 	}
 	function changePreorderQuantity(e){
-		$("#preorder_total").text($(this).val()*25 + ".00")
-		$("#checkoutbutton").attr("data-amount", $(this).val()*25 + "00")
+		$("#preorder_total").text($(this).val()*35 + ".00")
+		$("#checkoutbutton").attr("data-amount", $(this).val()*35 + "00")
 	}
 	function redirectNav(e){
 		e.preventDefault();

@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
 	def create
 		begin
 		  # Amount in cents
-		  @amount = params[:args][:shipping_address_country_code] == "US" ? params[:quantity].to_i*2500 : params[:quantity].to_i*4000
+		  @amount = params[:args][:shipping_address_country_code] == "US" ? params[:quantity].to_i*3500 : params[:quantity].to_i*5500
 		  customer = Stripe::Customer.create(
 		    :email => params[:token][:email],
 		    :card  => params[:token][:id]
